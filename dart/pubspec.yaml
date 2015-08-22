@@ -1,0 +1,14 @@
+name: random
+description: A sample application
+
+# Add the bin/random.dart script to the scripts pub installs.
+# Activate local repo:
+#   pub global activate --source path .
+#
+executables:
+  random:
+
+dependencies:
+  args: ^0.10.0
+
+homepage: https://www.dartlang.org/docs/tutorials/cmdline/
