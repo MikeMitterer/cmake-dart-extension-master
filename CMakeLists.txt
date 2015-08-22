@@ -68,7 +68,7 @@ endif(DOXYGEN_FOUND)
 
 add_subdirectory (extension)
 
-find_library(extension_location extension)
+find_library(extension_location sample_extension)
 message("Found extension at: ${extension_location}")
 
 SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")

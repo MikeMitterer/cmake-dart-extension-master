@@ -1,5 +1,5 @@
-#cmake-qt5-example
-A quick and simple example for using Qt 5 and Cmake.
+#cmake-dart-extension-master
+A quick and simple example for using CMAKE to build Dart native extension.
 
 It is essentially for my own usage, but I'd be happy if it is useful to someone else.
 I am open to improvement and contributions.
@@ -10,7 +10,9 @@ I am open to improvement and contributions.
     cd build
     cmake ..
     make
-    ./myAplication
+    cd ..
+    cd dart
+    ./random
     
 ### hint
 Install [entr](http://entrproject.org/)  
