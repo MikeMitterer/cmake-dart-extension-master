@@ -95,9 +95,9 @@ if (${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
 
         set(CXX_ARCHITECTURE_FLAGS "-arch x86_64")
 
-    endif (${EX_PLATFORM} EQUAL "32")
+    endif ()
 
-else (${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
+else ()
     if (${EX_PLATFORM} EQUAL "32")
 
         set(CXX_ARCHITECTURE_FLAGS "-m32")
@@ -106,9 +106,9 @@ else (${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
 
         set(CXX_ARCHITECTURE_FLAGS "-m64")
 
-    endif (${EX_PLATFORM} EQUAL "32")
+    endif ()
 
-endif (${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
+endif ()
 
 message(STATUS "Architectural Flags:   " ${CXX_ARCHITECTURE_FLAGS})
 
@@ -123,8 +123,8 @@ include_directories("${PROJECT_SOURCE_DIR}/include")
 # │  Library (entry points)                                          │
 # └──────────────────────────────────────────────────────────────────┘
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -arch x86_64 -Wl,-undefined,dynamic_lookup -I${DART_SDK}")
-SET(CMAKE_SHARED_LINKER_FLAGS    "-Wl,-undefined,dynamic_lookup")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 ${CXX_ARCHITECTURE_FLAGS} -Wl,-undefined,dynamic_lookup -I${DART_SDK}")
+#SET(CMAKE_SHARED_LINKER_FLAGS    "-Wl,-undefined,dynamic_lookup")
 
 add_library (${LIB} SHARED ${source}
         src/NewCppClass.cpp src/NewCppClass.h

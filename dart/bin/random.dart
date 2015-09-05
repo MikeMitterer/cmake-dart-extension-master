@@ -5,7 +5,9 @@ library random;
 import "package:random/random.dart";
 
 void main() {
-  print(systemRand());
+  print("systemRand:        ${systemRand()}");
+  print("noScopeSystemRand: ${noScopeSystemRand()}");
+  print("systemSrand:       ${systemSrand(100)}");
 
   final RandomArray array = new RandomArray();
   array.randomArray(20,10).then((final List<int> values) {

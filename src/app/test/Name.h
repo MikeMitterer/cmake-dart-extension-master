@@ -9,7 +9,7 @@
 #include <iosfwd>
 #include <string>
 
-namespace test {
+namespace cpptest {
 
     class Name {
         const std::string name;

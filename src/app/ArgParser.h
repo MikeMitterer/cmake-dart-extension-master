@@ -5,13 +5,13 @@
 #ifndef QTCMDLINE_ARGPARSER_H
 #define QTCMDLINE_ARGPARSER_H
 
-
 #include <qcoreapplication.h>
-#include <qcommandlineparser.h>
+#include <functional>
+#include <QtCore/qcommandlineparser.h>
 #include "test/Name.h"
 
 using namespace std;
-namespace cpptest = test;
+//namespace cpptest = test;
 
 class ArgParser {
     enum class Option {

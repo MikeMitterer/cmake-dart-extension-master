@@ -1,10 +1,13 @@
 #include <QApplication>
 #include <qcommandlineparser.h>
 #include <iostream>
+#include <memory>
 #include "interface/MainWindow.hpp"
-#include <Qdebug>
+#include <QDebug>
 #include <dart/extension/include/SampleProject.h>
 #include <dart/extension/src/NewCppClass.h>
+#include <src/app/test/Name.h>
+
 #include <src/app/ArgParser.h>
 
 using namespace std;

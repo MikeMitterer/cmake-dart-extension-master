@@ -3,7 +3,6 @@
 //
 
 #include <qmap.h>
-#include <iostream>
 #include "ArgParser.h"
 
 void ArgParser::setup() {
@@ -32,7 +31,12 @@ void ArgParser::setup() {
 //                                   QCoreApplication::translate("main", "Copy all source files into <directory>."),
 //                                   QCoreApplication::translate("main", "directory")));
 
-    parser.addOptions(options.values());
+    for(const QCommandLineOption& option : options.values()) {
+        parser.addOption(option);
+    }
+
+    // QT 5.5
+    // parser.addOptions(options.values());
 }
 
 void ArgParser::process() {

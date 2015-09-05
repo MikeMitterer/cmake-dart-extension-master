@@ -7,6 +7,7 @@
 #include "include/dart_api.h"
 #include "include/dart_native_api.h"
 
+
 Dart_NativeFunction ResolveName(Dart_Handle name, int argc, bool* auto_setup_scope);
 
 /**
@@ -53,8 +54,10 @@ void SystemRand(Dart_NativeArguments arguments) {
 void SystemSrand(Dart_NativeArguments arguments) {
     Dart_EnterScope();
     bool success = false;
+
     Dart_Handle seed_object = HandleError(Dart_GetNativeArgument(arguments, 0));
     if (Dart_IsInteger(seed_object)) {
+
         bool fits;
         HandleError(Dart_IntegerFitsIntoInt64(seed_object, &fits));
         if (fits) {
@@ -63,6 +66,7 @@ void SystemSrand(Dart_NativeArguments arguments) {
             srand(static_cast<unsigned>(seed));
             success = true;
         }
+
     }
     Dart_SetReturnValue(arguments, HandleError(Dart_NewBoolean(success)));
     Dart_ExitScope();
@@ -82,6 +86,7 @@ uint8_t* randomArray(unsigned int seed, size_t length) {
     }
     return values;
 }
+
 
 
 void wrappedRandomArray(Dart_Port dest_port_id, Dart_CObject* message) {
