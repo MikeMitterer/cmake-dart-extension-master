@@ -9,6 +9,10 @@
 
 Dart_NativeFunction ResolveName(Dart_Handle name, int argc, bool* auto_setup_scope);
 
+/**
+ * DartCode:
+ *  import 'dart-ext:native/sample_extension';
+ */
 DART_EXPORT Dart_Handle sample_extension_Init(Dart_Handle parent_library) {
     if (Dart_IsError(parent_library)) {
         return parent_library;
@@ -31,6 +35,10 @@ Dart_Handle HandleError(Dart_Handle handle) {
 }
 
 
+/**
+ * DartCode:
+ *  int systemRand() native "SystemRand";
+ */
 void SystemRand(Dart_NativeArguments arguments) {
     Dart_EnterScope();
     Dart_Handle result = HandleError(Dart_NewInteger(rand()));
@@ -38,7 +46,10 @@ void SystemRand(Dart_NativeArguments arguments) {
     Dart_ExitScope();
 }
 
-
+/**
+ * DartCode:
+ *   bool systemSrand(int seed) native "SystemSrand";
+ */
 void SystemSrand(Dart_NativeArguments arguments) {
     Dart_EnterScope();
     bool success = false;
@@ -76,8 +87,8 @@ uint8_t* randomArray(unsigned int seed, size_t length) {
 void wrappedRandomArray(Dart_Port dest_port_id, Dart_CObject* message) {
     Dart_Port reply_port_id = ILLEGAL_PORT;
 
-    if (message->type == Dart_CObject_kArray &&
-        3 == message->value.as_array.length) {
+    if (message->type == Dart_CObject_kArray && 3 == message->value.as_array.length) {
+
         // Use .as_array and .as_int32 to access the data in the Dart_CObject.
         Dart_CObject* param0 = message->value.as_array.values[0];
         Dart_CObject* param1 = message->value.as_array.values[1];
@@ -114,7 +125,10 @@ void wrappedRandomArray(Dart_Port dest_port_id, Dart_CObject* message) {
     Dart_PostCObject(reply_port_id, &result);
 }
 
-
+/**
+ * DartCode:
+ *  SendPort _newServicePort() native "RandomArray_ServicePort";
+ */
 void randomArrayServicePort(Dart_NativeArguments arguments) {
     Dart_EnterScope();
     Dart_SetReturnValue(arguments, Dart_Null());

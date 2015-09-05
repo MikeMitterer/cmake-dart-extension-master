@@ -1,22 +1,39 @@
 # ┌──────────────────────────────────────────────────────────────────┐
-# │  Projects Settings                                               │
+# │  Extension Settings                                              │
+# │    Useful Vars: http://www.cmake.org/Wiki/CMake_Useful_Variables │
 # └──────────────────────────────────────────────────────────────────┘
 
 cmake_minimum_required(VERSION 3.2)
 project(sample_extension)
 
-if(NOT DEFINED LIBRARY_OUTPUT_DIRECTORY)
-    set(LIBRARY_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/lib")
-endif()
-message( "Library ouput path: ${LIBRARY_OUTPUT_DIRECTORY}")
+# CMakeLists.txt - home
+message(STATUS "Extension-BASEDir:        ${CMAKE_CURRENT_SOURCE_DIR}" )
+message(STATUS "Extension-BinDir:         ${CMAKE_BINARY_DIR}" )
+message(STATUS "Extension-Project-Dir:    ${PROJECT_BINARY_DIR}" )
+
+# Project - home (Path to top of source tree)
+message(STATUS "Extension-CMake Home:     ${CMAKE_HOME_DIRECTORY}" )
+
+#if(NOT DEFINED LIBRARY_OUTPUT_DIRECTORY)
+#    get_filename_component(PARENT_DIR ${MYPROJECT_DIR} DIRECTORY)
+#    set(LIBRARY_OUTPUT_DIRECTORY "../lib")
+#endif()
+#message( "Library ouput path: ${LIBRARY_OUTPUT_DIRECTORY}")
+
+# Set the output directory for binaries
+set( CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
+set( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
+set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
 
 # Set the output directory for library
-set( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${LIBRARY_OUTPUT_DIRECTORY} )
+#set( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${LIBRARY_OUTPUT_DIRECTORY} )
 
 # Add this lib to the projects SEARCH-Path for LIBs
 list(APPEND CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 
 set(LIB ${PROJECT_NAME})
+
+set(CMAKE_AUTOMOC OFF)
 
 # ┌──────────────────────────────────────────────────────────────────┐
 # │  Dart                                                            │
@@ -47,8 +64,8 @@ endif ($ENV{DART_SDK})
 
 set( DART_INCLUDE "${DART_SDK}/include")
 
-message(STATUS "DART_SDK:            " ${DART_SDK})
-message(STATUS "DART_INCLUDE:        " ${DART_INCLUDE})
+message(STATUS "DART_SDK:              " ${DART_SDK})
+message(STATUS "DART_INCLUDE:          " ${DART_INCLUDE})
 
 # ┌──────────────────────────────────────────────────────────────────┐
 # │  Dart II (SystemInfo)                                            │
@@ -115,8 +132,16 @@ add_library (${LIB} SHARED ${source}
 
 target_include_directories(${LIB} PUBLIC ${DART_SDK})
 
-set( TARGET_DIR "${CMAKE_HOME_DIRECTORY}/dart/lib/native")
-add_custom_command(TARGET ${LIB} POST_BUILD
+get_filename_component(PARENT_DIR ${CMAKE_CURRENT_SOURCE_DIR} DIRECTORY)
+message(STATUS "ParentDir:             " ${PARENT_DIR})
+
+set( TARGET_DIR "${PARENT_DIR}/lib/native")
+#add_custom_command(TARGET ${LIB} POST_BUILD
+#        COMMAND "${CMAKE_COMMAND}" -E copy "$<TARGET_FILE:${LIB}>" "${TARGET_DIR}/$<TARGET_FILE_NAME:${LIB}>"
+#        COMMENT "Copying LIB to ${TARGET_DIR}"
+#)
+
+add_custom_target(DartLib ALL
         COMMAND "${CMAKE_COMMAND}" -E copy "$<TARGET_FILE:${LIB}>" "${TARGET_DIR}/$<TARGET_FILE_NAME:${LIB}>"
         COMMENT "Copying LIB to ${TARGET_DIR}"
 )

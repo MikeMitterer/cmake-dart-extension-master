@@ -8,20 +8,23 @@
       <config projectName="qtCmdline" targetName="doc" />
       <config projectName="dartMaster" targetName="doc" />
       <config projectName="dartMaster" targetName="dartMaster" />
+      <config projectName="dartMaster" targetName="Sample_extension_automoc" />
       <config projectName="myApplication" targetName="myApplication" />
       <config projectName="qtCmdline" targetName="qtCmdline" />
+      <config projectName="myApplication" targetName="myApplication_automoc" />
+      <config projectName="dartMaster" targetName="Dart" />
       <config projectName="dartMaster" targetName="sample_extension" />
       <config projectName="dartMaster" targetName="SampleExtension" />
       <config projectName="dartMaster" targetName="Sample_extension" />
-      <config projectName="qtCmdline" targetName="lib1" />
       <config projectName="qtCmdline" targetName="Hello_automoc" />
       <config projectName="dartMaster" targetName="dartMaster_automoc" />
-      <config projectName="myApplication" targetName="myApplication_automoc" />
+      <config projectName="dartMaster" targetName="TARGET" />
       <config projectName="qtCmdline" targetName="Hello" />
       <config projectName="dartMaster" targetName="lib1" />
       <config projectName="qtCmdline" targetName="qtCmdline_automoc" />
-      <config projectName="dartMaster" targetName="Sample_extension_automoc" />
+      <config projectName="qtCmdline" targetName="lib1" />
       <config projectName="dartMaster" targetName="sample_extension_automoc" />
+      <config projectName="dartMaster" targetName="DartLib" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true" GENERATION_PASS_SYSTEM_ENVIRONMENT="true">
@@ -30,7 +33,41 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4874c493-6fdf-420b-a284-2d34696c20cc" name="Default" comment="" />
+    <list default="true" id="4874c493-6fdf-420b-a284-2d34696c20cc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CMakeFiles/sample_extension.dir/src/NewCppClass.cpp.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CMakeFiles/sample_extension.dir/src/SampleProject.cpp.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CMakeFiles/sample_extension.dir/src/dartInterface.cpp.o" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart/extension/lib/libsample_extension.dylib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CMakeFiles/CMakeDirectoryInformation.cmake" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CMakeFiles/sample_extension.dir/CXX.includecache" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CMakeFiles/sample_extension.dir/DependInfo.cmake" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CMakeFiles/sample_extension.dir/build.make" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CMakeFiles/sample_extension.dir/cmake_clean.cmake" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/cmake_install.cmake" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CMakeFiles/sample_extension.dir/depend.internal" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CMakeFiles/sample_extension.dir/depend.make" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CMakeFiles/sample_extension.dir/flags.make" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CMakeFiles/sample_extension.dir/link.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CMakeFiles/sample_extension.dir/progress.make" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/CMakeFiles/progress.marks" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dart/random" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/extension/CMakeLists.txt" afterPath="$PROJECT_DIR$/dart/extension/CMakeLists.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/extension/include/SampleProject.h" afterPath="$PROJECT_DIR$/dart/extension/include/SampleProject.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/extension/src/NewCppClass.cpp" afterPath="$PROJECT_DIR$/dart/extension/src/NewCppClass.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/extension/src/NewCppClass.h" afterPath="$PROJECT_DIR$/dart/extension/src/NewCppClass.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/extension/src/SampleProject.cpp" afterPath="$PROJECT_DIR$/dart/extension/src/SampleProject.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/extension/src/dartInterface.cpp" afterPath="$PROJECT_DIR$/dart/extension/src/dartInterface.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/extension/src/dartInterface.h" afterPath="$PROJECT_DIR$/dart/extension/src/dartInterface.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dartMaster" afterPath="$PROJECT_DIR$/bin/dartMaster" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/mikemitterer.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/mikemitterer.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/myApplication.cpp" afterPath="$PROJECT_DIR$/app/myApplication.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dart/lib/random.dart" afterPath="$PROJECT_DIR$/dart/lib/random.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="cmake-Qt5-example-master.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,30 +90,35 @@
     <favorites_list name="cmake-Qt5-example-master" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4621719">
+    <splitter split-orientation="horizontal" split-proportion="0.5290557">
       <split-first>
         <leaf>
-          <file leaf-file-name="pubspec.yaml" pinned="false" current-in-tab="true">
+          <file leaf-file-name="pubspec.yaml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dart/pubspec.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.08125677">
-                  <caret line="5" column="39" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="39" />
+                <state vertical-scroll-proportion="-2.7777777">
+                  <caret line="5" column="11" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="39" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="dart_api.h" pinned="false" current-in-tab="false">
-            <entry file="file:///usr/local/Cellar/dart/1.11.3/libexec/include/dart_api.h">
+          <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/dart/extension/CMakeLists.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.7206704">
+                  <caret line="134" column="60" selection-start-line="134" selection-start-column="60" selection-end-line="134" selection-end-column="60" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dartInterface.cpp" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dart/extension/src/dartInterface.cpp">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="221" column="17" selection-start-line="221" selection-start-column="17" selection-end-line="221" selection-end-column="17" />
-                  <folding>
-                    <element signature="e#677#698#0" expanded="true" />
-                    <element signature="e#731#776#0" expanded="true" />
-                    <element signature="e#799#1305#0" expanded="true" />
-                    <element signature="e#1602#1675#0" expanded="true" />
-                  </folding>
+                  <caret line="159" column="27" selection-start-line="159" selection-start-column="10" selection-end-line="159" selection-end-column="27" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -89,7 +131,7 @@
             <entry file="file://$PROJECT_DIR$/dart/lib/random.dart">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="18" />
+                  <caret line="45" column="10" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="64" />
                   <folding>
                     <element signature="e#21#41#0" expanded="true" />
                   </folding>
@@ -107,21 +149,51 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+          <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.47995666">
-                  <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+                <state vertical-scroll-proportion="-11.592592">
+                  <caret line="83" column="41" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+          <file leaf-file-name="dartInterface.h" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dart/extension/src/dartInterface.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="NewCppClass.cpp" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dart/extension/src/NewCppClass.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="NewCppClass.h" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dart/extension/src/NewCppClass.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-7.2413793">
-                  <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+                <state vertical-scroll-proportion="0.48498845">
+                  <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -134,7 +206,7 @@
             <entry file="file://$PROJECT_DIR$/app/myApplication.cpp">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+                  <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
                   <folding />
                 </state>
               </provider>
@@ -153,6 +225,9 @@
         </leaf>
       </split-second>
     </splitter>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -177,9 +252,13 @@
         <option value="$PROJECT_DIR$/dart/bin/random.dart" />
         <option value="$PROJECT_DIR$/dart/web/main.dart" />
         <option value="$PROJECT_DIR$/lib1/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/extension/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/dart/lib/random.dart" />
+        <option value="$PROJECT_DIR$/extension/src/dartInterface.cpp" />
         <option value="$PROJECT_DIR$/app/myApplication.cpp" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/dart/extension/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -221,7 +300,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -348,6 +427,76 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="dart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-Qt5-example-master" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-Qt5-example-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-dart-extension-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-Qt5-example-master" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-Qt5-example-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-dart-extension-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="native" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-Qt5-example-master" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-Qt5-example-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-dart-extension-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="extension" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -369,18 +518,66 @@
               <option name="myItemId" value="dart" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="include" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-Qt5-example-master" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-Qt5-example-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-dart-extension-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-Qt5-example-master" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-Qt5-example-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-dart-extension-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Dart" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="/usr/local/Cellar/dart/1.12.0" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/lib1" />
   </component>
   <component name="RecentsManager">
@@ -388,14 +585,14 @@
       <recent name="$PROJECT_DIR$/dart/lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dart" />
       <recent name="$PROJECT_DIR$/dart/lib" />
       <recent name="$PROJECT_DIR$/dart/lib/src" />
       <recent name="$PROJECT_DIR$/src/app/test" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/lib1/include" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.dartMaster">
+  <component name="RunManager" selected="Application.Build All">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="myApplication" TARGET_NAME="myApplication" CONFIG_NAME="Debug">
       <envs />
       <method />
@@ -427,25 +624,30 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="dartMaster_automoc" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="dartMaster" TARGET_NAME="dartMaster_automoc" CONFIG_NAME="Debug">
+    <configuration default="false" name="Extension" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="dartMaster" TARGET_NAME="sample_extension" CONFIG_NAME="Debug">
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="sample_extension" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="dartMaster" TARGET_NAME="sample_extension" CONFIG_NAME="Debug">
+    <configuration default="false" name="TARGET" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="dartMaster" TARGET_NAME="TARGET" CONFIG_NAME="Debug">
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="sample_extension_automoc" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="dartMaster" TARGET_NAME="sample_extension_automoc" CONFIG_NAME="Debug">
+    <configuration default="false" name="Dart" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="dartMaster" TARGET_NAME="Dart" CONFIG_NAME="Debug">
       <envs />
       <method />
     </configuration>
-    <list size="6">
+    <configuration default="false" name="DartLib" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="dartMaster" TARGET_NAME="DartLib" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Application.doc" />
       <item index="1" class="java.lang.String" itemvalue="Application.Build All" />
       <item index="2" class="java.lang.String" itemvalue="Application.dartMaster" />
-      <item index="3" class="java.lang.String" itemvalue="Application.dartMaster_automoc" />
-      <item index="4" class="java.lang.String" itemvalue="Application.sample_extension" />
-      <item index="5" class="java.lang.String" itemvalue="Application.sample_extension_automoc" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Extension" />
+      <item index="4" class="java.lang.String" itemvalue="Application.TARGET" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Dart" />
+      <item index="6" class="java.lang.String" itemvalue="Application.DartLib" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -471,25 +673,25 @@
     <frame x="94" y="28" width="2403" height="1369" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21822542" sideWeight="0.44176197" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26219025" sideWeight="0.44176197" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23101519" sideWeight="0.5463787" order="8" side_tool="true" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23255815" sideWeight="0.49654856" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17704363" sideWeight="0.19018404" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11435832" sideWeight="0.48656592" order="3" side_tool="false" content_ui="combo" x="106" y="487" width="2173" height="383" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17704363" sideWeight="0.80981594" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19610335" sideWeight="0.1971831" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.104193136" sideWeight="0.48656592" order="3" side_tool="false" content_ui="combo" x="106" y="487" width="2173" height="383" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19610335" sideWeight="0.8028169" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23181455" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2286171" sideWeight="0.45362136" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22446324" sideWeight="0.3647587" order="0" side_tool="true" content_ui="combo" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17825739" sideWeight="0.53113085" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Dart Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32933652" sideWeight="0.49512917" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23181455" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2286171" sideWeight="0.45362136" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -513,24 +715,27 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/myApplication.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dart/bin/random.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dart/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="39" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/dart/1.11.3/libexec/include/dart_api.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="221" column="17" selection-start-line="221" selection-start-column="17" selection-end-line="221" selection-end-column="17" />
-          <folding>
-            <element signature="e#677#698#0" expanded="true" />
-            <element signature="e#731#776#0" expanded="true" />
-            <element signature="e#799#1305#0" expanded="true" />
-            <element signature="e#1602#1675#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -796,33 +1001,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/Cellar/dart/1.11.3/libexec/lib/isolate/isolate.dart">
+    <entry file="file://$PROJECT_DIR$/dart/bin/random.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5611247">
-          <caret line="528" column="15" selection-start-line="528" selection-start-column="15" selection-end-line="528" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/Cellar/dart/1.11.3/libexec/include/dart_api.h">
+    <entry file="file://$PROJECT_DIR$/dart/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="221" column="17" selection-start-line="221" selection-start-column="17" selection-end-line="221" selection-end-column="17" />
-          <folding>
-            <element signature="e#677#698#0" expanded="true" />
-            <element signature="e#731#776#0" expanded="true" />
-            <element signature="e#799#1305#0" expanded="true" />
-            <element signature="e#1602#1675#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dart/lib/random.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="18" />
-          <folding>
-            <element signature="e#21#41#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-2.7777777">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -834,18 +1025,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dart/pubspec.yaml">
+    <entry file="file://$PROJECT_DIR$/dart/extension/src/NewCppClass.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08125677">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dart/bin/random.dart">
+    <entry file="file://$PROJECT_DIR$/dart/extension/src/dartInterface.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="20" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dart/lib/random.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="10" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="64" />
+          <folding>
+            <element signature="e#21#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dart/extension/src/NewCppClass.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dart/extension/src/dartInterface.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="159" column="27" selection-start-line="159" selection-start-column="10" selection-end-line="159" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -853,28 +1070,36 @@
     <entry file="file://$PROJECT_DIR$/app/myApplication.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dart/extension/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7206704">
+          <caret line="134" column="60" selection-start-line="134" selection-start-column="60" selection-end-line="134" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.592592">
+          <caret line="83" column="41" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.2413793">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.48498845">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47995666">
-          <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
-          <folding />
-        </state>
       </provider>
     </entry>
   </component>

@@ -2,6 +2,8 @@
   <dictionary name="mikemitterer">
     <words>
       <w>cpptest</w>
+      <w>mkdir</w>
+      <w>srand</w>
     </words>
   </dictionary>
 </component>

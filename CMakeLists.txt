@@ -1,5 +1,6 @@
 # ┌──────────────────────────────────────────────────────────────────┐
 # │  Projects Settings                                               │
+# │    Useful Vars: http://www.cmake.org/Wiki/CMake_Useful_Variables │
 # └──────────────────────────────────────────────────────────────────┘
 
 cmake_minimum_required(VERSION 2.8.12)
@@ -13,8 +14,18 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set( LIBRARY_OUTPUT_DIRECTORY "${CMAKE_HOME_DIRECTORY}/lib")
 
-# Set the output directory for executable
-set( CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_HOME_DIRECTORY}/bin )
+# Set the output directory for binaries
+set( CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
+set( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
+set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
+
+# CMakeLists.txt - home
+message(STATUS "BASEDir:               ${CMAKE_CURRENT_SOURCE_DIR}" )
+message(STATUS "BinDir:                ${CMAKE_BINARY_DIR}" )
+message(STATUS "Project-Dir:           ${PROJECT_BINARY_DIR}" )
+
+# Project - home (Path to top of source tree)
+message(STATUS "Extension-CMake Home:   ${CMAKE_HOME_DIRECTORY}" )
 
 # ┌──────────────────────────────────────────────────────────────────┐
 # │  Main-Config (Architecture,...)                                  │
@@ -66,10 +77,17 @@ endif(DOXYGEN_FOUND)
 # │  Extension                                                       │
 # └──────────────────────────────────────────────────────────────────┘
 
-add_subdirectory (extension)
+add_subdirectory ( dart/extension )
 
-find_library(extension_location sample_extension)
-message("Found extension at: ${extension_location}")
+find_library(DART_LIBRARY
+        NAMES sample_extension
+        HINTS "${CMAKE_CURRENT_SOURCE_DIR}/dart/extension/lib"
+)
+get_filename_component(DART_EXTENSION_LIB ${DART_LIBRARY} DIRECTORY)
+get_filename_component(DART_EXTENSION ${DART_EXTENSION_LIB} DIRECTORY)
+
+message(STATUS "Found extension at:    ${DART_EXTENSION}")
+message(STATUS "Found extension lib:   ${DART_LIBRARY}")
 
 SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
 
