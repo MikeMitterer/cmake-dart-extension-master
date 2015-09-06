@@ -1,14 +1,19 @@
 name: random
-description: A sample application
 
-# Add the bin/random.dart script to the scripts pub installs.
-# Activate local repo:
-#   pub global activate --source path .
-#
-executables:
-  random:
+version: 0.1.0
+author: Mike Mitterer <office@mikemitterer.at>
+description: Sample for using a native library
+homepage: https://github.com/MikeMitterer/cmake-dart-extension-master
+
+environment:
+  sdk: '>=1.9.0 <2.0.0'
 
 dependencies:
-  args: ^0.10.0
+  logging: '>=0.11.1 <0.12.0'
+  logging_handlers: ">=0.8.0 <0.9.0"
 
-homepage: https://www.dartlang.org/docs/tutorials/cmdline/
+  rpc: '>=0.5.0 <0.6.0'
+  shelf: '>=0.6.0 <0.7.0'
+  shelf_route: '>=0.13.4 <0.14.0'
+  shelf_rpc: '>=0.0.3 <0.0.4'
+

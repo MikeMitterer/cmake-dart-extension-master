@@ -3,25 +3,25 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
     <generated>
       <config projectName="qtCmdline" targetName="lib1_automoc" />
-      <config projectName="dartMaster" targetName="lib1_automoc" />
+      <config projectName="dartMaster" targetName="dartMaster" />
       <config projectName="dartMaster" targetName="SampleExtension_automoc" />
       <config projectName="qtCmdline" targetName="doc" />
       <config projectName="dartMaster" targetName="doc" />
-      <config projectName="dartMaster" targetName="dartMaster" />
+      <config projectName="qtCmdline" targetName="Hello_automoc" />
+      <config projectName="dartMaster" targetName="lib1_automoc" />
       <config projectName="myApplication" targetName="myApplication" />
       <config projectName="qtCmdline" targetName="qtCmdline" />
       <config projectName="myApplication" targetName="myApplication_automoc" />
+      <config projectName="qtCmdline" targetName="qtCmdline_automoc" />
       <config projectName="dartMaster" targetName="sample_extension" />
       <config projectName="qtCmdline" targetName="Hello" />
       <config projectName="dartMaster" targetName="SampleExtension" />
       <config projectName="dartMaster" targetName="Sample_extension" />
       <config projectName="dartMaster" targetName="Dart" />
-      <config projectName="qtCmdline" targetName="Hello_automoc" />
       <config projectName="dartMaster" targetName="dartMaster_automoc" />
       <config projectName="dartMaster" targetName="TARGET" />
       <config projectName="qtCmdline" targetName="lib1" />
       <config projectName="dartMaster" targetName="lib1" />
-      <config projectName="qtCmdline" targetName="qtCmdline_automoc" />
       <config projectName="dartMaster" targetName="Sample_extension_automoc" />
       <config projectName="dartMaster" targetName="sample_extension_automoc" />
       <config projectName="dartMaster" targetName="DartLib" />
@@ -60,7 +60,7 @@
     <favorites_list name="cmake-Qt5-example-master" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.55658734">
+    <splitter split-orientation="horizontal" split-proportion="0.5050026">
       <split-first>
         <leaf>
           <file leaf-file-name="pubspec.yaml" pinned="false" current-in-tab="false">
@@ -76,7 +76,7 @@
           <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dart/extension/CMakeLists.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8391421">
+                <state vertical-scroll-proportion="0.86374134">
                   <caret line="126" column="66" selection-start-line="126" selection-start-column="66" selection-end-line="126" selection-end-column="66" />
                   <folding />
                 </state>
@@ -89,7 +89,7 @@
                 <state vertical-scroll-proportion="0.0">
                   <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
                   <folding>
-                    <element signature="e#217#236#0" expanded="true" />
+                    <element signature="e#217#236#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -111,7 +111,7 @@
                 <state vertical-scroll-proportion="0.0">
                   <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
                   <folding>
-                    <element signature="e#109#138#0" expanded="true" />
+                    <element signature="e#109#138#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -134,7 +134,7 @@
           <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.91152817">
+                <state vertical-scroll-proportion="1.0023094">
                   <caret line="144" column="25" selection-start-line="144" selection-start-column="25" selection-end-line="144" selection-end-column="25" />
                   <folding />
                 </state>
@@ -163,14 +163,14 @@
           </file>
           <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/README.md">
-              <provider editor-type-id="markdown-preview-editor">
-                <state />
-              </provider>
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
                   <caret line="40" column="31" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="31" />
                   <folding />
                 </state>
+              </provider>
+              <provider editor-type-id="MarkdownPreviewEditor">
+                <state />
               </provider>
             </entry>
           </file>
@@ -553,27 +553,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="101" y="43" width="2327" height="1276" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16894574" sideWeight="0.756129" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30569947" sideWeight="0.44176197" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23101519" sideWeight="0.5463787" order="8" side_tool="true" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23255815" sideWeight="0.49654856" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30679786" sideWeight="0.44176197" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16892779" sideWeight="0.25055927" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13916849" sideWeight="0.48656592" order="3" side_tool="false" content_ui="combo" x="106" y="487" width="2173" height="383" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16892779" sideWeight="0.7494407" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23181455" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22797927" sideWeight="0.45362136" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22446324" sideWeight="0.3647587" order="0" side_tool="true" content_ui="combo" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17825739" sideWeight="0.53113085" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2286171" sideWeight="0.45362136" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16894574" sideWeight="0.24387097" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23101519" sideWeight="0.5463787" order="8" side_tool="true" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22446324" sideWeight="0.3647587" order="0" side_tool="true" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23181455" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Dart Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Dart Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32933652" sideWeight="0.49512917" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32933652" sideWeight="0.49512917" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -652,7 +652,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#109#138#0" expanded="true" />
+            <element signature="e#109#138#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -908,7 +908,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <element signature="e#217#236#0" expanded="true" />
+            <element signature="e#217#236#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -952,7 +952,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
           <folding>
-            <element signature="e#109#138#0" expanded="true" />
+            <element signature="e#109#138#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -983,10 +983,13 @@
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dart/extension/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8391421">
+        <state vertical-scroll-proportion="0.86374134">
           <caret line="126" column="66" selection-start-line="126" selection-start-column="66" selection-end-line="126" selection-end-column="66" />
           <folding />
         </state>
@@ -994,7 +997,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.91152817">
+        <state vertical-scroll-proportion="1.0023094">
           <caret line="144" column="25" selection-start-line="144" selection-start-column="25" selection-end-line="144" selection-end-column="25" />
           <folding />
         </state>
