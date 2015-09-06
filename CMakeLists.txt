@@ -124,7 +124,22 @@ include_directories(src)
 # │  Applications  (entry points)                                    │ 
 # └──────────────────────────────────────────────────────────────────┘
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,-undefined,dynamic_lookup")
+# set default linke options!
+set(CMAKE_LINKER_OPTIONS "")
+if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+    # using Clang
+elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+    # using GCC
+    # -unresolved-symbols=ignore-in-shared-libs
+    # Avoids "Nicht definierter Verweis auf `Dart_GetNativeArgument'" linker error
+    set(CMAKE_LINKER_OPTIONS "-Wl,-unresolved-symbols=ignore-in-shared-libs")
+elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel")
+    # using Intel C++
+elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
+    # using Visual Studio C++
+endif()
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CMAKE_LINKER_OPTIONS}")
 
 add_executable(dartMaster
 	app/myApplication.cpp
@@ -133,9 +148,10 @@ add_executable(dartMaster
         src/app/test/Name.cpp
         src/app/test/Name.h)
 
-TARGET_LINK_LIBRARIES(dartMaster
+target_link_libraries(dartMaster
         sample_extension
 )
-#TARGET_LINK_LIBRARIES(dartMaster)
 
+# The qt5_use_modules CMake function encapsulates all of
+# the set-up required to use a Qt module.
 qt5_use_modules(dartMaster Widgets)
