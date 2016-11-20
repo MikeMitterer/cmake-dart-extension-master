@@ -7,11 +7,13 @@
 #include <iostream>
 #include <dart_api.h>
 #include <dart_native_api.h>
+#include <array>
+#include <vector>
 
 #include "utils.h"
 
 void wrappedRandomArray(Dart_Port dest_port_id, Dart_CObject* message);
-uint8_t* randomArray(unsigned int seed, size_t length);
+std::vector<uint8_t> randomArray(int32_t seed, int32_t length) ;
 
 /**
  * DartCode:
@@ -78,30 +80,30 @@ void wrappedRandomArray(Dart_Port dest_port_id, Dart_CObject* message) {
         Dart_CObject* param1 = message->value.as_array.values[1];
         Dart_CObject* param2 = message->value.as_array.values[2];
 
-        if (param0->type == Dart_CObject_kInt32 &&
-            param1->type == Dart_CObject_kInt32 &&
-            param2->type == Dart_CObject_kSendPort) {
+            if (param0->type == Dart_CObject_kInt32 &&
+                param1->type == Dart_CObject_kInt32 &&
+                param2->type == Dart_CObject_kSendPort) {
 
-            int seed = param0->value.as_int32;
-            int length = param1->value.as_int32;
-            reply_port_id = param2->value.as_send_port.id;
-            uint8_t* values = randomArray(seed, length);
+                int32_t seed = param0->value.as_int32;
+                int32_t length = param1->value.as_int32;
+                reply_port_id = param2->value.as_send_port.id;
 
-            if (values != NULL) {
+                // It is OK that result is destroyed when function exits.
+                // Dart_PostCObject has copied its data.
+                std::vector<uint8_t> values = randomArray(seed, length);
+
                 Dart_CObject result;
 
                 result.type = Dart_CObject_kTypedData;
                 result.value.as_typed_data.type = Dart_TypedData_kUint8;
-                result.value.as_typed_data.values = values;
+                result.value.as_typed_data.values = values.data();
                 result.value.as_typed_data.length = length;
 
                 Dart_PostCObject(reply_port_id, &result);
-                free(values);
-                // It is OK that result is destroyed when function exits.
-                // Dart_PostCObject has copied its data.
                 return;
             }
-        }
+
+
     }
 
     Dart_CObject result;
@@ -109,17 +111,17 @@ void wrappedRandomArray(Dart_Port dest_port_id, Dart_CObject* message) {
     Dart_PostCObject(reply_port_id, &result);
 }
 
-uint8_t* randomArray(unsigned int seed, size_t length) {
-    if (length <= 0 || length > 10000000) {
-        return NULL;
+std::vector<uint8_t> randomArray(int32_t seed, int32_t length) {
+    if(length <= 0 || length > 10000000) {
+        throw std::runtime_error("Size for randomArray must be > 0 and < 10000000 but was "
+            + std::to_string(length));
     }
-    uint8_t* values = reinterpret_cast<uint8_t*>(malloc(length));
-    if (NULL == values) {
-        return NULL;
+
+    std::vector<uint8_t> values;
+    srand(static_cast<unsigned int>(seed));
+    for (int i = 0; i < length; i++) {
+        values.push_back(static_cast<uint8_t>(rand() % 256));
     }
-    srand(seed);
-    for (int i = 0; i < length; ++i) {
-        values[i] = (uint8_t) (rand() % 256);
-    }
+
     return values;
 }
