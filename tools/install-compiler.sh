@@ -5,7 +5,8 @@
 # 	More: http://www.techerina.com/2015/04/installing-upgrading-gcc-in-ubuntu-linuxmint-machine.html
 #------------------------------------------------------------------------------
 
-VERSION="4.9"
+VERSION="5"
+#VERSION="4.9"
 
 add-apt-repository ppa:ubuntu-toolchain-r/test
 apt-get update

@@ -1,157 +1,156 @@
 # ┌──────────────────────────────────────────────────────────────────┐
-# │  Projects Settings                                               │
+# │  Extension Settings                                              │
 # │    Useful Vars: http://www.cmake.org/Wiki/CMake_Useful_Variables │
 # └──────────────────────────────────────────────────────────────────┘
 
 cmake_minimum_required(VERSION 3.2)
-project(dartMaster)
+project(sample_extension)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-# add_compile_options("-Wall")
-# add_compile_options("-Wextra")
+# CMakeLists.txt - home
+message(STATUS "Extension-BASEDir:     ${CMAKE_CURRENT_SOURCE_DIR}" )
+message(STATUS "Extension-BinDir:      ${CMAKE_BINARY_DIR}" )
+message(STATUS "Extension-Project-Dir: ${PROJECT_BINARY_DIR}" )
 
-# C++14: set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
-include(CheckCXXCompilerFlag)
-CHECK_CXX_COMPILER_FLAG("-std=c++1y" COMPILER_SUPPORTS_CXX1Y)
-CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
-CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)
+# Project - home (Path to top of source tree)
+message(STATUS "Extension-CMake Home:     ${CMAKE_HOME_DIRECTORY}" )
 
-if(COMPILER_SUPPORTS_CXX1Y)
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
-	message(STATUS "C++14 Compiler")
-elseif(COMPILER_SUPPORTS_CXX11)
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-	message(STATUS "C++11 Compiler")
-elseif(COMPILER_SUPPORTS_CXX0X)
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
-	message(STATUS "OLD! C++11 Compiler")
-else()
-        message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
-endif()
-
-set( LIBRARY_OUTPUT_DIRECTORY "${CMAKE_HOME_DIRECTORY}/lib")
+#if(NOT DEFINED LIBRARY_OUTPUT_DIRECTORY)
+#    get_filename_component(PARENT_DIR ${MYPROJECT_DIR} DIRECTORY)
+#    set(LIBRARY_OUTPUT_DIRECTORY "../lib")
+#endif()
+#message( "Library ouput path: ${LIBRARY_OUTPUT_DIRECTORY}")
 
 # Set the output directory for binaries
 set( CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 set( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
 
-# CMakeLists.txt - home
-message(STATUS "BASEDir:               ${CMAKE_CURRENT_SOURCE_DIR}" )
-message(STATUS "BinDir:                ${CMAKE_BINARY_DIR}" )
-message(STATUS "Project-Dir:           ${PROJECT_BINARY_DIR}" )
+# Set the output directory for library
+#set( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${LIBRARY_OUTPUT_DIRECTORY} )
 
-# Project - home (Path to top of source tree)
-message(STATUS "Extension-CMake Home:   ${CMAKE_HOME_DIRECTORY}" )
+# Add this lib to the projects SEARCH-Path for LIBs
+list(APPEND CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 
-# ┌──────────────────────────────────────────────────────────────────┐
-# │  Main-Config (Architecture,...)                                  │
-# └──────────────────────────────────────────────────────────────────┘
+set(LIB ${PROJECT_NAME})
 
-# Architecture (32/64 bit)
-set(X64 OFF)
-if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-    set(X64 ON)
-endif()
-message (STATUS "Architecture is 64Bit - ${X64}")
+set(CMAKE_AUTOMOC OFF)
 
 # ┌──────────────────────────────────────────────────────────────────┐
-# │  Qt                                                              │
+# │  Dart                                                            │
 # └──────────────────────────────────────────────────────────────────┘
 
-if (DEFINED ENV{QT5DIR})
-   set(CMAKE_PREFIX_PATH $ENV{QT5DIR} ${CMAKE_PREFIX_PATH})
-# else ()
-#    message (FATAL_ERROR "ERROR: Environment variable QT5DIR is not set. Please locate your Qt folder QT5DIR.")
+set(DART_TARGET "${CMAKE_CURRENT_SOURCE_DIR}/dart/lib/native")
+
+# Get path to Dart's SDK.
+if ($ENV{DART_SDK})
+    set(DART_SDK $ENV{DART_SDK})
+
+else ($ENV{DART_SDK})
+    # Get full path to the Dart executable.
+    execute_process(COMMAND which dart OUTPUT_VARIABLE DART_EXEC OUTPUT_STRIP_TRAILING_WHITESPACE)
+
+    if (NOT DART_EXEC)
+        message(FATAL_ERROR "Error: Unable to find dart executable!")
+    endif (NOT DART_EXEC)
+
+    # Expand symlinks.
+    get_filename_component(DART_EXEC ${DART_EXEC} REALPATH)
+
+    get_filename_component(DART_SDK ${DART_EXEC}/../.. ABSOLUTE)
+
+    if (NOT DART_SDK)
+        message(FATAL_ERROR "Error: Unable to find dart-sdk!!!")
+    endif (NOT DART_SDK)
+
+endif ($ENV{DART_SDK})
+
+set( DART_INCLUDE "${DART_SDK}/include")
+
+message(STATUS "DART_SDK:              " ${DART_SDK})
+message(STATUS "DART_INCLUDE:          " ${DART_INCLUDE})
+message(STATUS "DART_TARGET:           " ${DART_TARGET})
+
+# ┌──────────────────────────────────────────────────────────────────┐
+# │  Dart II (SystemInfo)                                            │
+# └──────────────────────────────────────────────────────────────────┘
+
+if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+    MESSAGE(STATUS "64 bits compiler detected" )
+    SET( EX_PLATFORM 64 )
+    SET( EX_PLATFORM_NAME "x64" )
+else( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+    MESSAGE(STATUS "32 bits compiler detected" )
+    SET( EX_PLATFORM 32 )
+    SET( EX_PLATFORM_NAME "x86" )
+endif( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+
+message(STATUS "System name:           " ${CMAKE_SYSTEM_NAME})
+message(STATUS "Platform:              " ${EX_PLATFORM})
+message(STATUS "Platform Name:         " ${EX_PLATFORM_NAME})
+
+if (${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
+
+    if (${EX_PLATFORM} EQUAL "32")
+
+        set(CXX_ARCHITECTURE_FLAGS "-arch i386")
+
+    elseif (${EX_PLATFORM} EQUAL "64")
+
+        set(CXX_ARCHITECTURE_FLAGS "-arch x86_64")
+
+    endif ()
+
+else ()
+    if (${EX_PLATFORM} EQUAL "32")
+
+        set(CXX_ARCHITECTURE_FLAGS "-m32")
+
+    elseif (${EX_PLATFORM} EQUAL "64")
+
+        set(CXX_ARCHITECTURE_FLAGS "-m64")
+
+    endif ()
+
 endif ()
 
-
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_AUTOMOC ON)
-
-find_package(Qt5Core REQUIRED)
-#find_package(Qt5Widgets REQUIRED)
-
-message(STATUS "Qt5Core found at:                ${Qt5Core_DIR}")
-
-# The Qt5Widgets_INCLUDES also includes the include directories for
-# dependencies QtCore and QtGui
-include_directories(${Qt5Core_INCLUDES})
-
-# ┌──────────────────────────────────────────────────────────────────┐
-# │  Doxygen                                                         │
-# └──────────────────────────────────────────────────────────────────┘
-
-find_package(Doxygen)
-
-if(DOXYGEN_FOUND)
-
-  add_custom_target(doc ${DOXYGEN_EXECUTABLE} WORKING_DIRECTORY ${CMAKE_HOME_DIRECTORY} )
-  message("Doxygen was found! (${DOXYGEN_EXECUTABLE})")
-
-else(DOXYGEN_FOUND)
-
-  message(STATUS "Doxygen not found - Documentation will not be generated")
-
-endif(DOXYGEN_FOUND)
-
-# ┌──────────────────────────────────────────────────────────────────┐
-# │  Extension                                                       │
-# └──────────────────────────────────────────────────────────────────┘
-
-add_subdirectory ( dart/extension )
-
-find_library(DART_LIBRARY
-        NAMES sample_extension
-        HINTS "${CMAKE_CURRENT_SOURCE_DIR}/dart/extension/lib"
-)
-get_filename_component(DART_EXTENSION_LIB ${DART_LIBRARY} DIRECTORY)
-get_filename_component(DART_EXTENSION ${DART_EXTENSION_LIB} DIRECTORY)
-
-message(STATUS "Found extension at:    ${DART_EXTENSION}")
-message(STATUS "Found extension lib:   ${DART_LIBRARY}")
-
-SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
+message(STATUS "Architectural Flags:   " ${CXX_ARCHITECTURE_FLAGS})
 
 # ┌──────────────────────────────────────────────────────────────────┐
 # │  Source file                                                     │
 # └──────────────────────────────────────────────────────────────────┘
 
-file(GLOB_RECURSE source src/*.cpp)
-include_directories(src)
+#file(GLOB_RECURSE source src/*.cpp)
+include_directories("${PROJECT_SOURCE_DIR}/include")
+include_directories("${DART_INCLUDE}")
+
+set(SOURCE_FILES ${SOURCE_FILES}
+    src/dartInterface.cpp
+    src/SystemRand.cpp
+    )
 
 # ┌──────────────────────────────────────────────────────────────────┐
-# │  Applications  (entry points)                                    │ 
+# │  Library (entry points)                                          │
 # └──────────────────────────────────────────────────────────────────┘
 
-# set default linke options!
-set(CMAKE_LINKER_OPTIONS "")
-if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
-    # using Clang
-elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
-    # using GCC
-    # -unresolved-symbols=ignore-in-shared-libs
-    # Avoids "Nicht definierter Verweis auf `Dart_GetNativeArgument'" linker error
-    set(CMAKE_LINKER_OPTIONS "-Wl,-unresolved-symbols=ignore-in-shared-libs")
-elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel")
-    # using Intel C++
-elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
-    # using Visual Studio C++
-endif()
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 ${CXX_ARCHITECTURE_FLAGS} -Wl,-undefined,dynamic_lookup -I${DART_SDK}")
+#SET(CMAKE_SHARED_LINKER_FLAGS    "-Wl,-undefined,dynamic_lookup")
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CMAKE_LINKER_OPTIONS}")
+add_library (${LIB} SHARED ${SOURCE_FILES}
+#        src/NewCppClass.cpp src/NewCppClass.h
+#        src/dartInterface.cpp src/dartInterface.h
+    )
 
-add_executable(dartMaster
-	app/myApplication.cpp
+target_include_directories(${LIB} PUBLIC ${DART_SDK})
 
-	${source} src/app/ArgParser.cpp src/app/ArgParser.h
-        src/app/test/Name.cpp
-        src/app/test/Name.h)
+message(STATUS "ParentDir:             " ${PARENT_DIR})
 
-target_link_libraries(dartMaster
-        sample_extension
+#set( TARGET_DIR "${PARENT_DIR}/lib/native")
+#add_custom_command(TARGET ${LIB} POST_BUILD
+#        COMMAND "${CMAKE_COMMAND}" -E copy "$<TARGET_FILE:${LIB}>" "${TARGET_DIR}/$<TARGET_FILE_NAME:${LIB}>"
+#        COMMENT "Copying LIB to ${TARGET_DIR}"
+#)
+
+add_custom_target(DartLib ALL
+        COMMAND "${CMAKE_COMMAND}" -E copy "$<TARGET_FILE:${LIB}>" "${DART_TARGET}/$<TARGET_FILE_NAME:${LIB}>"
+        COMMENT "Copying LIB to ${DART_TARGET}"
 )
-
-# The qt5_use_modules CMake function encapsulates all of
-# the set-up required to use a Qt module.
-qt5_use_modules(dartMaster Widgets)

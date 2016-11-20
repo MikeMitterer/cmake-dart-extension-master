@@ -2,7 +2,7 @@
 
 library random;
 
-import "package:random/random.dart";
+import "package:random/native/random.dart";
 
 void main() {
   print("systemRand:        ${systemRand()}");
