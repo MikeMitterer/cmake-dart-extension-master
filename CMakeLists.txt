@@ -12,7 +12,7 @@ message(STATUS "Extension-BinDir:      ${CMAKE_BINARY_DIR}" )
 message(STATUS "Extension-Project-Dir: ${PROJECT_BINARY_DIR}" )
 
 # Project - home (Path to top of source tree)
-message(STATUS "Extension-CMake Home:     ${CMAKE_HOME_DIRECTORY}" )
+message(STATUS "Extension-CMake Home:  ${CMAKE_HOME_DIRECTORY}" )
 
 #if(NOT DEFINED LIBRARY_OUTPUT_DIRECTORY)
 #    get_filename_component(PARENT_DIR ${MYPROJECT_DIR} DIRECTORY)
