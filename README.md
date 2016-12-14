@@ -5,6 +5,37 @@ It is essentially for my own usage, but I'd be happy if it is useful to someone 
 I am open to improvement and contributions.
 
 ## Prepare your machine to build the LIB
+
+This project uses "Config" and "configDart" CMake-File for configuration. You can 
+find these file as usual on [GitHub](https://github.com/MikeMitterer/cmake)
+
+```cmake
+    cmake_minimum_required(VERSION 3.6)
+    
+    # ENV is defined in .bashrc
+    #   ( cmake-configs on GH: https://github.com/MikeMitterer/cmake)
+    set(CMAKE_MODULE_PATH $ENV{CMAKE_MODULE_PATH} ${CMAKE_MODULE_PATH})
+    
+    # ┌──────────────────────────────────────────────────────────────────┐
+    # │  Projects Settings                                               │
+    # └──────────────────────────────────────────────────────────────────┘
+    
+    project(sample_extension)
+    
+    # Output bin, c++11 usw
+    include(Config)
+    
+    # Only necessary if this module has QT-Siblings
+    set(CMAKE_AUTOMOC OFF)
+    
+    # ┌──────────────────────────────────────────────────────────────────┐
+    # │  Dart (Make sure you have '-std=c++11' for CMAKE_CXX_FLAGS       │
+    # └──────────────────────────────────────────────────────────────────┘
+    
+    include(configDart)
+    #...
+```
+
 ## Mac
 ```bash
     brew install cmake
