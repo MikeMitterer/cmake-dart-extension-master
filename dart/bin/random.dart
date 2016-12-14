@@ -2,9 +2,10 @@
 
 library random;
 
+import 'dart:async';
 import "package:random/native/random.dart";
 
-void main() async {
+Future main() async {
   print("systemRand:        ${systemRand()}");
   print("noScopeSystemRand: ${noScopeSystemRand()}");
   print("systemSrand:       ${systemSrand(100)}");
