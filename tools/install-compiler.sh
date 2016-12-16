@@ -3,6 +3,8 @@
 #------------------------------------------------------------------------------
 # Installs gcc / g++ in Linux Mint / Ubuntu
 # 	More: http://www.techerina.com/2015/04/installing-upgrading-gcc-in-ubuntu-linuxmint-machine.html
+#
+# DEPRECIATED - only here as a reminder!
 #------------------------------------------------------------------------------
 
 VERSION="5"

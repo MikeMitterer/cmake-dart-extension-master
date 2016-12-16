@@ -5,8 +5,8 @@ I started this project because of a very old and outdated documentation
 on the according site: https://www.dartlang.org/articles/dart-vm/native-extensions
 
 You can find the native-part here on GH
-   - https://github.com/MikeMitterer/cmake-dart-extension-master
-      
+   - [CPP-Master](https://github.com/MikeMitterer/cmake-dart-extension-master)
+   
 ## Description
 Two ways of testing this lib:
 
@@ -24,3 +24,47 @@ RPC-API:
 - http://localhost:8080/api/random/0.1/systemRand/seed/555
 - http://localhost:8080/api/random/0.1/noScopeSystemRand 
 
+## Project structure
+I'm using this approach - the C++-Project is the root project and Dart as a side(or sub)-project
+
+cmake does the heavy lifting and copies the native lib to the right place.
+ 
+cmake-dart-extension-master:
+ 
+    ├── CMakeLists.txt
+    ├── README.md
+    ├── dart
+    │   ├── LICENSE
+    │   ├── README.md
+    │   ├── bin
+    │   │   ├── random.dart
+    │   │   └── rpc.dart
+    │   ├── dart.iml
+    │   ├── lib
+    │   │   ├── native
+    │   │   │   ├── libsample_extension.dylib
+    │   │   │   ├── libsample_extension.so
+    │   │   │   └── random.dart
+    │   │   ├── rpcapi.dart
+    │   │   └── src
+    │   ├── pubspec.lock
+    │   └── pubspec.yaml
+    ├── include
+    │   └── SampleProject.h
+    ├── lib
+    │   ├── libsample_extension.dylib
+    │   └── mac
+    │       ├── libsample_extension.dylib
+    │       └── libsample_extension.so
+    ├── src
+    │   ├── NewCppClass.cpp
+    │   ├── NewCppClass.h
+    │   ├── SampleProject.cpp
+    │   ├── SystemRand.cpp
+    │   ├── SystemRand.h
+    │   ├── dartInterface.cpp
+    │   ├── dartInterface.h
+    │   └── utils.h
+    └── tools
+        └── install-compiler.sh
+    
