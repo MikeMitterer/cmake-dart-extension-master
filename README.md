@@ -1,8 +1,10 @@
 # cmake-dart-extension-master
-A quick and simple example for using CMAKE to build Dart native extension.
+> A quick and simple example for using CMAKE to build Dart native extension.
 
 It is essentially for my own usage, but I'd be happy if it is useful to someone else.
 I am open to improvement and contributions.
+
+This project creates the Dart package [native_sample](https://pub.dartlang.org/packages/native_sample)
 
 ## Prepare your machine to build the LIB
 
