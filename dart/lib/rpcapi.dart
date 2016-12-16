@@ -7,7 +7,7 @@ import 'dart:async';
 import "dart:math" as Math;
 
 import 'package:rpc/rpc.dart';
-import "package:random/native/random.dart";
+import "package:native_sample/native/random.dart";
 
 class RndResponse {
     int result;

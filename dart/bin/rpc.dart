@@ -13,7 +13,7 @@ import 'package:shelf/shelf.dart' as shelf;
 import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_route/shelf_route.dart' as shelf_route;
 
-import 'package:random/rpcapi.dart';
+import 'package:native_sample/rpcapi.dart';
 
 const _API_PREFIX = '/api';
 final ApiServer _apiServer = new ApiServer(apiPrefix: _API_PREFIX, prettyPrint: true);

@@ -1,9 +1,9 @@
 #!/usr/local/bin/dart
 
-library random;
+library native_sample;
 
 import 'dart:async';
-import "package:random/native/random.dart";
+import "package:native_sample/native/random.dart";
 
 Future main() async {
   print("systemRand:        ${systemRand()}");

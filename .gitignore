@@ -1,7 +1,9 @@
 build/
 packages
 dart/.pub
-lib/**
-dart/lib/native/*.so
-dart/lib/native/*.dll
-dart/lib/native/*.dylib
+#dart/lib/native/*.so
+#dart/lib/native/*.dll
+#dart/lib/native/*.dylib
+.packages
+pubspec.lock
+dart/myLogFile.txt

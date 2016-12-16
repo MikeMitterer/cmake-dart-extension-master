@@ -1,6 +1,13 @@
 # Dart Native-Library sample
+> Some test around building native extensions for Dart
 
-### Description
+I started this project because of a very old and outdated documentation 
+on the according site: https://www.dartlang.org/articles/dart-vm/native-extensions
+
+You can find the native-part here on GH
+   - https://github.com/MikeMitterer/cmake-dart-extension-master
+      
+## Description
 Two ways of testing this lib:
 
 Command line:

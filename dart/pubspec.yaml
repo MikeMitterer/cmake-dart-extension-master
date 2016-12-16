@@ -1,9 +1,16 @@
-name: random
+name: native_sample
 
 version: 0.1.0
 author: Mike Mitterer <office@mikemitterer.at>
 description: Sample for using a native library
 homepage: https://github.com/MikeMitterer/cmake-dart-extension-master
+
+# Add the bin/drandom.dart script to the scripts pub installs.
+# Activate local repo:
+#   pub global activate --source path .
+#
+executables:
+  random:
 
 environment:
   sdk: '>=1.9.0 <2.0.0'
