@@ -10,6 +10,8 @@
 #include <array>
 #include <vector>
 
+#include <spdlog/spdlog.h>
+
 #include "utils.h"
 
 void wrappedRandomArray(Dart_Port dest_port_id, Dart_CObject* message);

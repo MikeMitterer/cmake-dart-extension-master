@@ -7,8 +7,19 @@
 #include <iostream>
 #include <dart_api.h>
 #include <dart_native_api.h>
+
+#include <spdlog/spdlog.h>
+
 #include "utils.h"
 #include "SystemRand.h"
+
+/**
+ * Sample uses the following libs:
+ *      Logger: https://github.com/gabime/spdlog
+ */
+
+namespace spd = spdlog;
+auto logger = spd::stdout_color_mt("console");
 
 struct FunctionLookup {
     const char *name;
@@ -20,7 +31,7 @@ struct FunctionLookup {
  *  import 'dart-ext:native/sample_extension';
  */
 DART_EXPORT Dart_Handle sample_extension_Init(Dart_Handle parent_library) {
-    std::cout << "sample_extension_Init" << std::endl;
+    logger->info(fmt::format("sample_extension_Init"));
 
     if (Dart_IsError(parent_library)) {
         return parent_library;
