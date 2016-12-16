@@ -36,71 +36,48 @@ find these file as usual on [GitHub](https://github.com/MikeMitterer/cmake)
     #...
 ```
 
-## Mac
-```bash
-    brew install cmake
-    
-    # Compiler should be already on your system!
-    # If not:
-        # brew install gcc
-        # or install XCode
-        
-    # For testing!
-    brew install qt5
-```
+## Prerequisites 
+   - cmake
+   - clang (I'm using clang 8 on Mac and 3.8 on Linux)
+   - Dart
 
-## Linux (Tested Linux Mint 17.2)
-```bash
-    apt-get update
+## What to do next
+   - Go to [https://github.com/MikeMitterer/cmake-dart-extension-master](https://github.com/MikeMitterer/cmake-dart-extension-master)  
+   Clone the repo
+      
+   - Go to [https://github.com/MikeMitterer/cmake](https://github.com/MikeMitterer/cmake)  
+   Clone the repo (You need Config.cmake, configDart.cmake and FindSpdlog.cmake)
+             
+   - Add the cmake-folder to your CMAKE_MODULE_PATH
+   Something like this:
+   
+      
+        export DEVCPP="/Volumes/Daten/DevLocal/DevCPP"
+        export CMAKE_MODULE_PATH="${DEVCPP}/cmake"
+   
+   - cd to "cmake-dart-extension-master"  
+   We add dependencies to spdlog. If you want to know why I use this approach - check
+   out this website [Dependency management for C++ with CMake and Git](https://foonathan.github.io/blog/2016/07/07/cmake-dependency-handling.html)
+   
+     - mkdir .dependencies
+   
+     - cd .dependencies
+     git submodule add https://github.com/gabime/spdlog
+   
+     - cd back to cmake-dart-extensions-master
+     git submodule update --init -- .dependencies/spdlog
     
-    # Install g++ compiler (5.x) 
-    # More on: http://www.techerina.com/2015/04/installing-upgrading-gcc-in-ubuntu-linuxmint-machine.html
-    # Or check out the script in "tools"
+   
+   - mkdir "build" (If it does not already exist)   
+   If it exists - `rm -f build && mkdir build && cd build && cmake .. && make`   
+   
+   **This should build the native lib on your system and copy it to _dart/lib/native_ ** 
 
-    add-apt-repository ppa:ubuntu-toolchain-r/test
-    apt-get update
-    cd tools
-    chmod 700 install-compiler.sh
-    ./install-compiler.sh
-    
-    # Install cmake 3.x
-    add-apt-repository ppa:george-edison55/cmake-3.x
-    apt-get update
-    apt-get install cmake
-                    
-    # For testing!
-    apt-get install qt5-default
-```
-
-### Usage
-
-```bash
-
-    # Create build directory
-    mkdir build
-    
-    # CD into the build dir
-    cd build
-    
-    # Now generate all the necessary file and build your lib 
-    cmake .. && make
-    
-    # Test your lib with Dart
-    cd ..
-    cd dart
-    dart bin/random.dart
-    
-```
-#### Clean rebuild
-
-```bash
-
-    cd build
-    rm -rf * && cmake .. && make
-```     
+### Why spdlog
+I am just curios how it plays together with Dart + native extensions...          
     
     
-### hint
+### Hint
 Install [entr](http://entrproject.org/)  
 
 cd to "bin" and enter:
