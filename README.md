@@ -78,11 +78,12 @@ I am just curios how it plays together with Dart + native extensions...
     
     
 ### Hint
-Install [entr](http://entrproject.org/)  
-
-cd to "bin" and enter:
+Check out [entr](http://entrproject.org/)  
+ 
+_cmake-dart-extension-master $_
 ```bash
-    ls * | entr ./dartMaster -p
+    ls * | entr sh -c "cd dart; dart bin/random.dart"
 ```
-Every time "dartMaster" changes "entr" calls `dartMaster -q` - nice for testing!
+Every time a file in cmake-dart-extension-master changes "entr" executes `dart bin/random.dart` - nice for testing!
+     
      
