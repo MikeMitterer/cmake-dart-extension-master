@@ -7,11 +7,25 @@ on the according site: https://www.dartlang.org/articles/dart-vm/native-extensio
 You can find the native-part here on GH
    - [CPP-Master](https://github.com/MikeMitterer/cmake-dart-extension-master)
    
+## Original Dart Documentation    
+Because it is so outdated [2012](https://www.dartlang.org/articles/dart-vm/native-extensions) I try
+to collect some useful information's on [CPP-Master](https://github.com/MikeMitterer/cmake-dart-extension-master)
+
+If you have some tips, tricks or other useful information's please go to 
+[CPP-Master](https://github.com/MikeMitterer/cmake-dart-extension-master), file an issue report
+or add something to the [Wiki](https://github.com/MikeMitterer/cmake-dart-extension-master/wiki)! - **Thanks!**   
+   
 ## Description
 Two ways of testing this lib:
 
 Command line:
 - dart bin/random.dart
+
+
+    pub global install <package> - does not work 
+
+It produces "[Cannot load native extensions over http: or https:](https://github.com/dart-lang/sdk/issues/28137)"
+
 
 RPC Server:
 
@@ -67,4 +81,6 @@ cmake-dart-extension-master:
     │   └── utils.h
     └── tools
         └── install-compiler.sh
-    
+
+### Conclusion so far (12 2016)
+It's possible to write native extensions for Dart but you have to be a masochist to do this.  

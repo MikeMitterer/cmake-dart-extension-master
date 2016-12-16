@@ -6,6 +6,13 @@ I am open to improvement and contributions.
 
 This project creates the Dart package [native_sample](https://pub.dartlang.org/packages/native_sample)
 
+## Original Dart Documentation    
+Because it is so outdated [2012](https://www.dartlang.org/articles/dart-vm/native-extensions) I try
+to collect some useful information's here on [CPP-Master](https://github.com/MikeMitterer/cmake-dart-extension-master)
+
+If you have some tips, tricks or other useful information's please file an issue report
+or add something to the [Wiki](https://github.com/MikeMitterer/cmake-dart-extension-master/wiki)! - **Thanks!**   
+
 ## Prepare your machine to build the LIB
 
 This project uses "Config" and "configDart" CMake-File for configuration. You can 
