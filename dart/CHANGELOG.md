@@ -1,6 +1,11 @@
 # Change Log for native_sample
 Sample for using a native library
 
+## [Unreleased](http://github.com/mikemitterer/cmake-dart-extension-master/compare/v0.2.1...HEAD)
+
+### Docs
+* Added some links to the README's [b01d391](https://github.com/mikemitterer/cmake-dart-extension-master/commit/b01d3919d8cdbbb2a3fd25908920e9ddf073a19b)
+
 ## [v0.2.0](http://github.com/mikemitterer/cmake-dart-extension-master/compare/v0.2.0) - 2016-12-16
 
 ### Bugs
