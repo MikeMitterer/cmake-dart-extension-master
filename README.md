@@ -64,7 +64,7 @@ find these file as usual on [GitHub](https://github.com/MikeMitterer/cmake)
         export DEVCPP="/Volumes/Daten/DevLocal/DevCPP"
         export CMAKE_MODULE_PATH="${DEVCPP}/cmake"
    
-   - cd to "cmake-dart-extension-master"  
+   - cd to "cmake-dart-extension-master"    
    We add dependencies to spdlog. If you want to know why I use this approach - check
    out this website [Dependency management for C++ with CMake and Git](https://foonathan.github.io/blog/2016/07/07/cmake-dependency-handling.html)
    
