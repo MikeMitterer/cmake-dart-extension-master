@@ -58,9 +58,9 @@ find these file as usual on [GitHub](https://github.com/MikeMitterer/cmake)
    Clone the repo (You need Config.cmake, configDart.cmake and FindSpdlog.cmake)
              
    - Add the cmake-folder to your CMAKE_MODULE_PATH
-   Something like this:
-   
+   Something like this:  
       
+         
         export DEVCPP="/Volumes/Daten/DevLocal/DevCPP"
         export CMAKE_MODULE_PATH="${DEVCPP}/cmake"
    
