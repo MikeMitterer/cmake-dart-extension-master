@@ -1,9 +1,9 @@
 build/
 packages
 dart/.pub
-#dart/lib/native/*.so
-#dart/lib/native/*.dll
-#dart/lib/native/*.dylib
+lib/**/*sample_extension.so
+lib/**/*sample_extension.dll
+lib/**/*sample_extension.dylib
 .packages
 pubspec.lock
 dart/myLogFile.txt
